@@ -6,13 +6,13 @@
 /*   By: yalee <yalee@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/21 12:32:19 by leeyang           #+#    #+#             */
-/*   Updated: 2022/06/21 22:55:35 by yalee            ###   ########.fr       */
+/*   Updated: 2022/06/22 17:37:15 by yalee            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_atoi(char *str)
+int	ft_atoi(const char *str)
 {
 	size_t	sign;
 	size_t	i;

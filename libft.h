@@ -6,7 +6,7 @@
 /*   By: yalee <yalee@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/18 17:49:09 by leeyang           #+#    #+#             */
-/*   Updated: 2022/06/21 23:04:48 by yalee            ###   ########.fr       */
+/*   Updated: 2022/06/22 17:42:21 by yalee            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,9 +17,9 @@
 # include <stdlib.h>
 # include <unistd.h>
 
-int		ft_atoi(char *str);
+int		ft_atoi(const char *str);
 void	ft_bzero(void *s, size_t n);
-void	*ft_calloc(size_t count, size_t size);
+void	*ft_calloc(size_t nmemb, size_t size);
 void	*ft_memchr(const void *s, int c, size_t n);
 char	*ft_itoa(int n);
 int		ft_memcmp(const void *s1, const void *s2, size_t n);

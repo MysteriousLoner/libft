@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strjoin.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: leeyang <leeyang@student.42.fr>            +#+  +:+       +#+        */
+/*   By: yalee <yalee@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/21 14:19:44 by leeyang           #+#    #+#             */
-/*   Updated: 2022/06/21 14:25:22 by leeyang          ###   ########.fr       */
+/*   Updated: 2022/06/22 17:42:02 by yalee            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,25 +15,27 @@
 char	*ft_strjoin(char const *s1, char const *s2)
 {
 	size_t	i;
-	size_t	z;
-	char	*blank;
-	char	len;
+	size_t	j;
+	size_t	s1len;
+	size_t	s2len;
+	char	*s;
 
 	i = 0;
-	z = 0;
-	if (!s1 || !s2)
+	j = 0;
+	if (s1 == NULL || s2 == NULL)
 		return (NULL);
-	len = ft_strlen(s1) + ft_strlen(s2);
-	blank = (char *)malloc(sizeof(char) * (len + 1));
-	if (!*blank)
+	s1len = ft_strlen(s1);
+	s2len = ft_strlen(s2);
+	s = (char *)malloc(sizeof(char) * (s1len + s2len + 1));
+	if (s == NULL)
 		return (NULL);
-	while (s1[i] != '\0')
+	while (i < s1len)
 	{
-		blank[i] = s1[i];
+		s[i] = s1[i];
 		i++;
 	}
-	while (s2[z] != '\0')
-		blank[i++] = s2[z++];
-	blank[i] = '\0';
-	return (blank);
+	while (j < s2len)
+		s[i++] = s2[j++];
+	s[i] = '\0';
+	return (s);
 }

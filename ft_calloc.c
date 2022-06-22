@@ -3,22 +3,24 @@
 /*                                                        :::      ::::::::   */
 /*   ft_calloc.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: leeyang <leeyang@student.42.fr>            +#+  +:+       +#+        */
+/*   By: yalee <yalee@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/21 12:37:26 by leeyang           #+#    #+#             */
-/*   Updated: 2022/06/21 14:12:51 by leeyang          ###   ########.fr       */
+/*   Updated: 2022/06/22 22:47:29 by yalee            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_calloc(size_t count, size_t size)
+void	*ft_calloc(size_t nitems, size_t size)
 {
-	void	*rtn;
+	void	*x;
 
-	rtn = malloc(size * count);
-	if (!rtn)
+	if (nitems >= SIZE_MAX || size >= SIZE_MAX)
 		return (NULL);
-	ft_bzero(rtn, count);
-	return (rtn);
+	x = malloc(size * nitems);
+	if (!x)
+		return (0);
+	ft_bzero (x, nitems * size);
+	return (x);
 }
