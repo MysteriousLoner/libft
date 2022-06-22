@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_lstnew.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: leeyang <leeyang@student.42.fr>            +#+  +:+       +#+        */
+/*   By: yalee <yalee@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/21 14:46:20 by leeyang           #+#    #+#             */
-/*   Updated: 2022/06/21 15:41:01 by leeyang          ###   ########.fr       */
+/*   Updated: 2022/06/21 22:30:13 by yalee            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,4 +23,3 @@ t_list	*ft_lstnew(void *content)
 	lstnew->next = NULL;
 	return (lstnew);
 }
-

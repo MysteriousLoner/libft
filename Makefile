@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: leeyang <leeyang@student.42.fr>            +#+  +:+       +#+         #
+#    By: yalee <yalee@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/06/18 17:49:03 by leeyang           #+#    #+#              #
-#    Updated: 2022/06/21 16:03:17 by leeyang          ###   ########.fr        #
+#    Updated: 2022/06/22 13:09:43 by yalee            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,19 +18,18 @@ SRC = ft_atoi.c ft_bzero.c ft_calloc.c ft_isalnum.c ft_isalpha.c ft_isascii.c\
 	ft_lstnew.c ft_lstsize.c ft_memchr.c ft_memcmp.c ft_memcpy.c ft_memmove.c\
 	ft_memset.c ft_putchar_fd.c ft_putnbr_fd.c ft_putstr_fd.c ft_split.c ft_strchr.c\
 	ft_strdup.c ft_striteri.c ft_strjoin.c ft_strlcat.c ft_strlcpy.c ft_strlen.c\
-	ft_strmapi.c ft_strncmp.c ft_strnstr.c ft_strtrim.c ft_substr.c ft_tolower.c\
-	ft_toupper.c
+	ft_strmapi.c ft_strncmp.c ft_strnstr.c ft_strrchr.c ft_strtrim.c ft_substr.c\
+	ft_tolower.c ft_toupper.c ft_putendl_fd.c
 
 OBJS = $(SRC:.c=.o)
 
-CCLIB = ar rcs $(NAME) $(OBJ)
+CCLIB = ar rcs $(NAME) $(OBJS)
+
 CCOBJ = gcc -Wall -Wextra -Werror -c $(SRC)
 
-all: $(SRC) $(OBJ)
-	$(CCOBJ)
-	$(CCLIB)
+all: $(NAME)
 	
-$(NAME): $(SRC) $(OBJ)
+$(NAME):
 	$(CCOBJ)
 	$(CCLIB)
 

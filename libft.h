@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   libft.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: leeyang <leeyang@student.42.fr>            +#+  +:+       +#+        */
+/*   By: yalee <yalee@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/18 17:49:09 by leeyang           #+#    #+#             */
-/*   Updated: 2022/06/21 16:46:44 by leeyang          ###   ########.fr       */
+/*   Updated: 2022/06/21 23:04:48 by yalee            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,7 +50,7 @@ int		ft_isdigit(int c);
 int		ft_isprint(int c);
 size_t	ft_strlcat(char *dst, const char *src, size_t dstsize);
 void	ft_putchar_fd(char c, int fd);
-size_t	strlcpy(char *dst, const char *src, size_t size);
+size_t	ft_strlcpy(char *dst, const char *src, size_t size);
 
 typedef struct s_list
 {

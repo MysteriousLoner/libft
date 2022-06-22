@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_putnbr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: leeyang <leeyang@student.42.fr>            +#+  +:+       +#+        */
+/*   By: yalee <yalee@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/21 14:45:29 by leeyang           #+#    #+#             */
-/*   Updated: 2022/06/21 14:45:32 by leeyang          ###   ########.fr       */
+/*   Updated: 2022/06/22 13:02:25 by yalee            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,28 +14,19 @@
 
 void	ft_putnbr_fd(int n, int fd)
 {
-	if ((n > 2147483647) || (n < -2147483647))
-		return ;
-	if (n == 0)
-	{
-		ft_putchar_fd('0', fd);
-		return ;
-	}
-	if (n == -2147483648)
-	{
-		ft_putstr_fd("-2147483648", fd);
-		return ;
-	}
+	unsigned int	number;
+	char			c;
+
+	c = 0;
 	if (n < 0)
 	{
-		ft_putchar_fd('-', fd);
-		n *= -1;
-	}
-	if (n >= 10)
-	{
-		ft_putnbr_fd(n / 10, fd);
-		ft_putnbr_fd(n % 10, fd);
+		number = n * (-1);
+		write(fd, "-", 1);
 	}
 	else
-		ft_putchar_fd(n + '0', fd);
+		number = n;
+	if (number >= 10)
+		ft_putnbr_fd(number / 10, fd);
+	c = (number % 10) + 48;
+	write(fd, &c, 1);
 }
